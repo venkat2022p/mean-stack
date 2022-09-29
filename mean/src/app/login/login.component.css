@@ -1,0 +1,40 @@
+.mat-card{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+}
+
+.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+@media (min-width : 320px){
+    .loginPage{
+        background-color: royalblue !important;
+        display: flex;
+        height: 100%;
+    }
+    .mat-card-title, .mat-card{
+        font-size: 16px !important;
+    }
+    .mat-form-field{
+        width: 100%;
+        min-width: 250px;
+    } 
+}
+@media (min-width : 1200px){
+    .loginPage{
+        background-color: white !important;
+        display: flex;
+        height: 100%;
+    }
+    .mat-card-title, .mat-card{
+        font-size: 16px !important;
+    }
+    .mat-form-field{
+        width: 100%;
+        min-width: 250px;
+    } 
+}
