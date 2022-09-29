@@ -9,10 +9,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
