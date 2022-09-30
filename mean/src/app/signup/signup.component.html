@@ -1,0 +1,41 @@
+<div class="dashboard">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+         <mat-card>
+             <mat-card-title>Signup</mat-card-title>
+             <mat-card-content>
+                 <p>
+                    <mat-form-field>
+                        <input type="name" matInput placeholder="name"  minlength="5" formControlName="name">
+                        <mat-error *ngIf="!signUpForm.get('name')?.errors?.required && (signUpForm.get('name')?.errors?.pattern)">
+                            Please enter a valid name 
+                          </mat-error>
+                          <mat-error *ngIf="signUpForm.get('name')?.invalid && (signUpForm.get('name')?.dirty || signUpForm.get('name')?.touched) && signUpForm.get('name')?.errors?.required">
+                            name is required
+                          </mat-error>
+                      </mat-form-field>
+                     <mat-form-field>
+                         <input type="email" matInput placeholder="Email" formControlName="email">
+                         <mat-error *ngIf="!signUpForm.get('email')?.errors?.required && (signUpForm.get('email')?.errors?.pattern)">
+                             Please enter a valid email address
+                           </mat-error>
+                           <mat-error *ngIf="signUpForm.get('email')?.invalid && (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched) && signUpForm.get('email')?.errors?.required">
+                             Email is required
+                           </mat-error>
+                       </mat-form-field>
+                 </p>
+                 <p>
+                     <mat-form-field>
+                         <input type="password" matInput placeholder="Password" formControlName="password">
+                         <mat-error *ngIf="!signUpForm.get('password')?.errors?.required">
+                             Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+                           </mat-error>
+                           <mat-error *ngIf="signUpForm.get('password')?.invalid && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched) && signUpForm.get('password')?.errors?.required">
+                             Password is required
+                           </mat-error> 
+                     </mat-form-field>
+                 </p><br>
+                 <button mat-raised-button color="primary">Submit</button>
+             </mat-card-content>
+         </mat-card>
+     </form>
+ </div>

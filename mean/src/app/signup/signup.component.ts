@@ -3,14 +3,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup | any;
+export class SignupComponent implements OnInit {
+  signUpForm: FormGroup | any;
+name: any;
   constructor(private router :Router) {
-    this.loginForm = new FormGroup({
+    this.signUpForm = new FormGroup({
+      name:new FormControl(null, Validators.required),
       email: new FormControl('', [
         Validators.required,
         Validators.email,
@@ -28,11 +30,11 @@ export class LoginComponent implements OnInit {
     // throw new Error('Method not implemented.');
   }
   onSubmit(){
-    if(!this.loginForm.valid){
+    if(!this.signUpForm.valid){
       return;
     }
-    localStorage.setItem('email',this.loginForm.email)
-    localStorage.setItem('password',this.loginForm.password)
-    this.router.navigate(['/layout'])
+    localStorage.setItem('email',this.signUpForm.email)
+    localStorage.setItem('password',this.signUpForm.password)
+    this.router.navigate(['/login'])
   }
 }

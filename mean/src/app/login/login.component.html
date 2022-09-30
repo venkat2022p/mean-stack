@@ -1,4 +1,4 @@
-<div class="loginPage">
+<div class="dashboard">
    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <mat-card>
             <mat-card-title>Login Form</mat-card-title>
@@ -24,8 +24,11 @@
                             Password is required
                           </mat-error> 
                     </mat-form-field>
-                </p>
+                </p><br>
                 <button mat-raised-button color="primary">Submit</button>
+        
+              <div class=""><a href="/signup" class="signup">Signup</a></div>
+            
             </mat-card-content>
         </mat-card>
     </form>

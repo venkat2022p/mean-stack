@@ -11,11 +11,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
+import { ToastrModule } from 'ngx-toastr';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LayoutComponent
+    LayoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +27,11 @@ import { LayoutComponent } from './layout/layout.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatFormFieldModule,
+    ToastrModule.forRoot(),
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
