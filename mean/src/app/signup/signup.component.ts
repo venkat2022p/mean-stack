@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { CommonService } from '../serives/common.service'
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup | any;
 name: any;
-  constructor(private router :Router) {
+  constructor(private router :Router, private commonService:CommonService) {
     this.signUpForm = new FormGroup({
       name:new FormControl(null, Validators.required),
       email: new FormControl('', [
@@ -27,6 +29,8 @@ name: any;
     });
   }
   ngOnInit(): void {
+    
+    this.commonService.onSubscription()
     // throw new Error('Method not implemented.');
   }
   onSubmit(){
