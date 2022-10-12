@@ -31,6 +31,7 @@ export class LayoutComponent implements OnInit {
 // checkboxGroup = new  FormGroup({
 
 // });
+country = 'usa';
 form: FormGroup;
 constructor(fb: FormBuilder) {
   // this.name = 'Angular2'

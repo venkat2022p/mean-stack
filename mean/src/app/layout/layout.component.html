@@ -55,3 +55,7 @@
 </div>
 <button type="submit" (click)="profile()">ShowLog</button>
 </form>
+
+<h3>Built in Attributes</h3>
+<div [ngClass]="{'text-success':country === 'india'}">{{country}}</div>
+<div  [ngStyle]="{'color':country == 'india' ? 'blue':'red','font-size': country == 'india' ? '24px':'12px'}">{{country}}</div>
