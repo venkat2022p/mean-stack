@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
     this.commonService.onSubmit();
     localStorage.setItem('email',this.loginForm.email)
     localStorage.setItem('password',this.loginForm.password)
-    this.router.navigate(['/signup'])
+    this.router.navigate(['/layout'])
   }
 }

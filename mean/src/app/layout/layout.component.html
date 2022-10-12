@@ -1,1 +1,57 @@
-<p>layout works!</p>
+<!-- <form [formGroup]="profileForm" (ngSubmit)="submit()">
+  <label for="fname">FirstName:</label>
+  <input type="text" id="FirstName" ><br><br>
+  <label for="lname">LastName:</label>
+  <input type="text" id="LastName" ><br><br>
+
+<div formGroupName="address">
+  <h6>Address</h6>
+  <label for="street">Street:</label>
+  <input type="text" id="street" ><br><br>
+  <label for="city">City:</label>
+  <input type="text" id="city" ><br><br>
+  <label for="state">State:</label>
+  <input type="text" id="state" ><br><br>
+  <label for="zip">Zip code:</label>
+  <input type="text" id="zipcode" >
+</div>
+<div formArrayName="aliases">
+  <h2>Aliases</h2>
+  <button type="button" (click)="addAlias()">+ Add another alias</button>
+
+  <div *ngFor="let alias of aliases.controls; let i=index">
+
+    <label for="alias-{{ i }}">Alias:</label>
+    <input id="alias-{{ i }}" type="text" [formControlName]="i"><br><br>
+  </div>
+</div>
+<button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+<div [ngStyle]="currentStyles">
+  This div is initially italic, normal weight, and extra large (24px).
+</div> -->
+<form [formGroup]="form">
+  <div>
+    <label for="fname">FirstName:
+      <input type="text" id="fname" formControlName="fname">
+    </label>
+    <label for="fname">LastName:
+      <input type="text" id="lname" formControlName="lname">
+    </label>
+    <label for="fname">Email:
+      <input type="email" id="email" formControlName="email">
+    </label>
+  </div>
+  <div>Gender</div>
+<div>
+  <label>
+    <input type="radio" value="Male" formControlName="gender">
+      <span>male</span>
+  </label>
+  <label>
+    <input type="radio" value="Female"  formControlName="gender">
+      <span>female</span>
+  </label>
+</div>
+<button type="submit" (click)="profile()">ShowLog</button>
+</form>
