@@ -7,55 +7,36 @@ import { FormArray } from '@angular/forms';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-  // profileForm = this.fb.group({
-  //   firstName: ['', Validators.required],
-  //   lastName: [''],
-  //   address: this.fb.group({
-  //     street: [''],
-  //     city: [''],
-  //     state: [''],
-  //     zip: [''],
+  profileForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
       
-  //   }),
-  //   aliases: this.fb.array([
-  //     this.fb.control('')
-  //   ])
-  // });
-  // form = new FormGroup({
-  //   gender: ['', Validators.required]
-  // })
-  // currentStyles: Record<string , string> = {}
-  // canSave: any;
-  // isUnchanged: any;
-  // isSpecial: any;
-// checkboxGroup = new  FormGroup({
+    }),
 
-// });
-country = 'usa';
-form: FormGroup;
-constructor(fb: FormBuilder) {
-  // this.name = 'Angular2'
-  this.form = fb.group({
-  fname: ['', Validators.required],
-   lname: ['', Validators.required],
-   email: ['', Validators.required],
-    gender: ['', Validators.required]
   });
-}
-  // constructor(private fb :FormBuilder) { 
-    
-  // }
 
+  currentStyles: Record<string , string> = {}
+  canSave: any;
+  isUnchanged: any;
+  isSpecial: any;
+checkboxGroup = new  FormGroup({
+
+});
+country = 'usa';
+
+constructor(private fb: FormBuilder) {
+  
+}
   ngOnInit(): void {
 
  
   }
 
-  profile(){
-   let obj = JSON.stringify
-   (this.form.value)
-    console.log('Re-Details',obj);    
-  }
   // toggle(){
 
   // }
